@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student CRUD</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <main class="container">
+        <h1>Student CRUD</h1>
+        <p class="intro">A simple page that sends requests to your Spring Boot student controller.</p>
+
+        <section class="card" aria-labelledby="student-details-heading">
+            <h2 id="student-details-heading">Student details</h2>
+
+            <div class="form-grid">
+                <label for="studentId">
+                    ID
+                    <input id="studentId" type="number" min="1" placeholder="Example: 1" />
+                </label>
+
+                <label for="studentName">
+                    Name
+                    <input id="studentName" type="text" placeholder="Example: Ananya" />
+                </label>
+
+                <label for="studentEmail">
+                    Email
+                    <input id="studentEmail" type="email" placeholder="Example: ananya@email.com" />
+                </label>
+            </div>
+
+            <div class="actions" aria-label="Student actions">
+                <button id="createButton" type="button">Create</button>
+                <button id="getByIdButton" type="button">Get by ID</button>
+                <button id="getAllButton" type="button">Get All</button>
+                <button id="updateButton" type="button">Update</button>
+                <button id="deleteButton" type="button" class="danger">Delete</button>
+            </div>
+
+            <p id="message" class="message" role="status" aria-live="polite">
+                Ready. Enter student details and choose an action.
+            </p>
+        </section>
+
+        <section class="card" aria-labelledby="students-heading">
+            <div class="table-heading">
+                <h2 id="students-heading">Students</h2>
+                <span id="studentCount">0 students</span>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTableBody">
+                        <tr>
+                            <td colspan="3" class="empty">No students loaded yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
